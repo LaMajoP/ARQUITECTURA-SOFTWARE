@@ -13,6 +13,8 @@
  ## Creatividad en la Presentación
  Para la presentación de nuestro proyecto, usaremos un video donde simularemos a un estudiante calculando su promedio, obteniendo resultados acertados mediante el uso de nuestra explicación. 
 
+ Video: [Video Explicativo Problema](https://drive.google.com/file/d/1tVnDydv4E-2b3m-ql99MgLrWUwYksQWA/view?usp=sharing)
+
  ## Diseño de Software
  ### Principios SOLID aplicados:
 
@@ -36,7 +38,7 @@
 
 
  ### Diagrama UML
- ![Diagrama de Clases UML](diagrama_clases_uml.png)
+ ![Diagrama de Clases UML](assets/diagrama_clases_uml.png)
 
 
 
