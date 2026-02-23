@@ -23,6 +23,7 @@
  
 
  ### Diagrama UML
+ ![Diagrama de Clases UML](diagrama_clases_uml.png)
 
 
 
