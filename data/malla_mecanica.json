@@ -1,0 +1,383 @@
+{
+    "carrera": "Ingeniería Mecánica",
+    "materias": [
+        {
+            "id": 101,
+            "nombre": "Cálculo Univariado",
+            "creditos": 4,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 102,
+            "nombre": "Algoritmos y Fundamentos de Programación",
+            "creditos": 4,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 103,
+            "nombre": "Matemáticas Discretas",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 104,
+            "nombre": "Taller de Ingeniería Mecánica",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 105,
+            "nombre": "Cultura, Arte y Lenguaje",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 106,
+            "nombre": "Core Curriculum P&C I: Persona y Autoconocimiento",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 107,
+            "nombre": "Inglés I",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 201,
+            "nombre": "Cálculo Multivariado",
+            "creditos": 4,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 202,
+            "nombre": "Análisis de Fenómenos Físicos",
+            "creditos": 4,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 203,
+            "nombre": "Perspectivas e Innovación en la Industria Mecánica",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 204,
+            "nombre": "Probabilidad y Estadística Descriptiva",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 205,
+            "nombre": "Electiva I",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 206,
+            "nombre": "Core Curriculum P&C II: Persona y Afectividad",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 207,
+            "nombre": "Inglés II",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 301,
+            "nombre": "Física de Cuerpos Rígidos",
+            "creditos": 4,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 302,
+            "nombre": "Termodinámica",
+            "creditos": 4,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 303,
+            "nombre": "Fundamentos de Circuitos Eléctricos",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 304,
+            "nombre": "Ecuaciones Diferenciales",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 305,
+            "nombre": "Liderazgo Transformador y Pensamiento Innovador",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 306,
+            "nombre": "Core Curriculum P&C III: Persona y Trascendencia",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 307,
+            "nombre": "Inglés III",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 401,
+            "nombre": "Probabilidad y Estadística Inferencial",
+            "creditos": 4,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 402,
+            "nombre": "Física de Cuerpos Deformables",
+            "creditos": 4,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 403,
+            "nombre": "Mecánica de Fluidos",
+            "creditos": 4,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 404,
+            "nombre": "Taller de Fundamentos de Electrónica",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 405,
+            "nombre": "Core Curriculum P&C IV: Persona y su Actuar",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 406,
+            "nombre": "Inglés IV",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 501,
+            "nombre": "Prevención de Fallas",
+            "creditos": 4,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 502,
+            "nombre": "Prototipado y Modelado de Productos Técnicos",
+            "creditos": 4,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 503,
+            "nombre": "Manufactura Aditiva, Sustractiva e Híbrida",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 504,
+            "nombre": "Éxito Profesional con Sentido Social",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 505,
+            "nombre": "Sistemas de Intercambio Térmico",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 506,
+            "nombre": "Core Curriculum P&C V: Persona y Retos Actuales",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 507,
+            "nombre": "Inglés V",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 601,
+            "nombre": "Dinámica de Sistemas Mecánicos",
+            "creditos": 4,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 602,
+            "nombre": "Modelamiento de Sistemas Mecánicos",
+            "creditos": 4,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 603,
+            "nombre": "Sistemas Convencionales de Energía",
+            "creditos": 4,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 604,
+            "nombre": "Electiva II",
+            "creditos": 2,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 605,
+            "nombre": "Seguridad y Aseguramiento de la Calidad",
+            "creditos": 2,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 606,
+            "nombre": "Inglés VI",
+            "creditos": 2,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 701,
+            "nombre": "Sistemas Alternativos de Energía",
+            "creditos": 4,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 702,
+            "nombre": "Instrumentación y Control",
+            "creditos": 4,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 703,
+            "nombre": "Elementos de Máquina",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 704,
+            "nombre": "Cointeligencia para la Trayectoria Profesional",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 705,
+            "nombre": "Saberes para la Vida",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 706,
+            "nombre": "Transformación Estratégica de Materiales",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 707,
+            "nombre": "Inglés VII",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 801,
+            "nombre": "Capstone Design Project in Mechanical Engineering",
+            "creditos": 4,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 802,
+            "nombre": "Sistemas Ciber-Físicos Industriales",
+            "creditos": 4,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 803,
+            "nombre": "Gestión de Sistemas Energéticos Móviles y Estacionarios",
+            "creditos": 4,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 804,
+            "nombre": "Electiva III",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 805,
+            "nombre": "Electiva IV",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 806,
+            "nombre": "Reliability Engineering for Mechanical Systems",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 901,
+            "nombre": "Práctica Profesional",
+            "creditos": 18,
+            "semestre": 9,
+            "esOficial": true
+        }
+    ]
+}

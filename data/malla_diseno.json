@@ -1,0 +1,376 @@
+{
+    "carrera": "Ingeniería de Diseño e Innovación",
+    "materias": [
+        {
+            "id": 101,
+            "nombre": "Cálculo Univariado",
+            "creditos": 4,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 102,
+            "nombre": "Algoritmos y Fundamentos de Programación",
+            "creditos": 4,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 103,
+            "nombre": "Introducción a la Ingeniería de Diseño e Innovación",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 104,
+            "nombre": "Cultura, Arte y Lenguaje",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 105,
+            "nombre": "Core Curriculum P&C I: Persona y Autoconocimiento",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 106,
+            "nombre": "Inglés I",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 201,
+            "nombre": "Cálculo Multivariado",
+            "creditos": 4,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 202,
+            "nombre": "Análisis de Fenómenos Físicos",
+            "creditos": 4,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 203,
+            "nombre": "Creatividad e Innovacion",
+            "creditos": 4,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 204,
+            "nombre": "Probabilidad y Estadística Descriptiva",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 205,
+            "nombre": "Core Curriculum P&C II: Persona y Afectividad",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 206,
+            "nombre": "Inglés II",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 301,
+            "nombre": "Propiedades de la materia",
+            "creditos": 4,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 302,
+            "nombre": "Técnicas de Representación Analógica y Digital",
+            "creditos": 4,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 303,
+            "nombre": "Prototipado y Modelado de Productos Técnicos",
+            "creditos": 4,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 304,
+            "nombre": "Liderazgo Transformador y Pensamiento Innovador",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 305,
+            "nombre": "Core Curriculum P&C III: Persona y Trascendencia",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 306,
+            "nombre": "Inglés III",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 401,
+            "nombre": "Probabilidad y Estadística Inferencial",
+            "creditos": 4,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 402,
+            "nombre": "Fisica de Cuerpos Rígidos",
+            "creditos": 4,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 403,
+            "nombre": "Selección de Materiales",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 404,
+            "nombre": "Visualización y Storytelling con Datos",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 405,
+            "nombre": "Investigación de Usuario en Diseño",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 406,
+            "nombre": "Core Curriculum P&C IV: Persona y su Actuar",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 407,
+            "nombre": "Inglés IV",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 501,
+            "nombre": "Fisica de Cuerpos Deformables",
+            "creditos": 4,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 502,
+            "nombre": "Estudio de diseño I",
+            "creditos": 4,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 503,
+            "nombre": "Fundamentos de Circuitos Electricos",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 504,
+            "nombre": "Éxito Profesional con Sentido Social",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 505,
+            "nombre": "Electiva I",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 506,
+            "nombre": "Core Curriculum P&C V: Persona y Retos Actuales",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 507,
+            "nombre": "Inglés V",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 601,
+            "nombre": "Visualización Avanzada en 3D",
+            "creditos": 4,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 602,
+            "nombre": "Aplicaciones Avanzadas de Realidad Extendida",
+            "creditos": 4,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 603,
+            "nombre": "Estudio de Diseño II",
+            "creditos": 4,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 604,
+            "nombre": "Taller de Fundamentos de Electrónica",
+            "creditos": 2,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 605,
+            "nombre": "Electiva II",
+            "creditos": 2,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 606,
+            "nombre": "Inglés VI",
+            "creditos": 2,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 701,
+            "nombre": "Estudio de diseño III",
+            "creditos": 4,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 702,
+            "nombre": "Ciclo de vida del Producto",
+            "creditos": 4,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 703,
+            "nombre": "Cointeligencia para la Trayectoria Profesional",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 704,
+            "nombre": "Manufactura Aditiva, Sustractiva e Hibrida",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 705,
+            "nombre": "Saberes para la Vida",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 706,
+            "nombre": "Computational Design",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 707,
+            "nombre": "Inglés VII",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 801,
+            "nombre": "Capstone Design Project in Design and Innovation Engineering",
+            "creditos": 4,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 802,
+            "nombre": "Modelos de Negocio, Innovación y Transferencia Tecnológica",
+            "creditos": 4,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 803,
+            "nombre": "Gerencia del diseño",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 804,
+            "nombre": "Gestion de proyectos",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 805,
+            "nombre": "Seguridad y Aseguramiento de la Calidad",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 806,
+            "nombre": "Electiva III",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 807,
+            "nombre": "Electiva IV",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 901,
+            "nombre": "Práctica Profesional",
+            "creditos": 18,
+            "semestre": 9,
+            "esOficial": true
+        }
+    ]
+}

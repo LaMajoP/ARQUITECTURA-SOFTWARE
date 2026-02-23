@@ -10,3 +10,5 @@ class CarreraIngenieria(Enum):
     INGENIERIA_ELECTRICA = "Ingeniería Eléctrica"
     INGENIERIA_INFORMATICA = "Ingeniería Informática"
     INGENIERIA_BIOPRODUCCION = "Ingeniería de Bioproducción"
+    INGENIERIA_QUIMICA = "Ingeniería Química"
+    INGENIERIA_DISENO = "Ingeniería de Diseño e Innovación"

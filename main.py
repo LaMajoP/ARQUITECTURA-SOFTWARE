@@ -51,7 +51,11 @@ def main():
     print("1. Ingeniería Informática")
     print("2. Ingeniería Civil")
     print("3. Ingeniería de Bioproducción")
-    opcion_carrera = input("Seleccione una carrera (1-3): ")
+    print("4. Ingeniería Industrial")
+    print("5. Ingeniería Mecánica")
+    print("6. Ingeniería Química")
+    print("7. Ingeniería de Diseño e Innovación")
+    opcion_carrera = input("Seleccione una carrera (1-7): ")
     
     if opcion_carrera == "2":
         carrera = CarreraIngenieria.INGENIERIA_CIVIL
@@ -59,6 +63,18 @@ def main():
     elif opcion_carrera == "3":
         carrera = CarreraIngenieria.INGENIERIA_BIOPRODUCCION
         archivo_malla = 'malla_bioproduccion.json'
+    elif opcion_carrera == "4":
+        carrera = CarreraIngenieria.INGENIERIA_INDUSTRIAL
+        archivo_malla = 'malla_industrial.json'
+    elif opcion_carrera == "5":
+        carrera = CarreraIngenieria.INGENIERIA_MECANICA
+        archivo_malla = 'malla_mecanica.json'
+    elif opcion_carrera == "6":
+        carrera = CarreraIngenieria.INGENIERIA_QUIMICA
+        archivo_malla = 'malla_quimica.json'
+    elif opcion_carrera == "7":
+        carrera = CarreraIngenieria.INGENIERIA_DISENO
+        archivo_malla = 'malla_diseno.json'
     else:
         if opcion_carrera != "1":
             print("Opción no válida. Seleccionando Ingeniería Informática por defecto...")
