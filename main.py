@@ -80,15 +80,24 @@ def main():
             for m in carga_academica:
                 print(m)
                 
-        promedio = calculadora.calcular(carga_academica)
-        print(f"\nPromedio actual (sólo notas finales): {promedio:.2f}")
+        print("\n--- Resumen de Promedios ---")
+        promedio_acumulado = calculadora.calcular(carga_academica)
+        print(f"Promedio Ponderado Acumulado: {promedio_acumulado:.2f}")
+        
+        semestres_presentes = sorted(list(set(m.get_semestre() for m in carga_academica)))
+        if semestres_presentes:
+            print("Por semestre:")
+            for sem in semestres_presentes:
+                prom_semestre = calculadora.calcular_por_semestre(carga_academica, sem)
+                print(f"  - Semestre {sem}: {prom_semestre:.2f}")
         print("="*50)
         
         print("\nOpciones:")
         print("1. Eliminar una materia")
         print("2. Agregar una materia de otro semestre")
         print("3. Ingresar notas de los 3 cortes para una materia")
-        print("4. Salir")
+        print("4. Agregar TODAS las materias de otro semestre")
+        print("5. Salir")
         
         opcion = input("Seleccione una opción: ").strip().lower()
         
@@ -146,6 +155,25 @@ def main():
                 print("Materia no encontrada en su carga académica.")
                 
         elif opcion in ['4', 'd']:
+            semestre_objetivo = obtener_int_input("Ingrese el número del semestre que desea agregar completo (1-9): ", min_val=1, max_val=9)
+            materias_del_semestre = malla.get_materias_por_semestre(semestre_objetivo)
+            
+            if not materias_del_semestre:
+                print(f"No se encontraron materias para el semestre {semestre_objetivo}.")
+                continue
+                
+            agregadas = 0
+            for materia_nueva in materias_del_semestre:
+                if not any(m.get_id() == materia_nueva.get_id() for m in carga_academica):
+                    carga_academica.append(copy.deepcopy(materia_nueva))
+                    agregadas += 1
+            
+            if agregadas > 0:
+                print(f"Se agregaron {agregadas} materias del semestre {semestre_objetivo} a su carga académica.")
+            else:
+                print(f"Todas las materias del semestre {semestre_objetivo} ya estaban en su carga académica.")
+                
+        elif opcion in ['5', 'e']:
             print("Saliendo de la calculadora. ¡Hasta pronto!")
             break
         else:

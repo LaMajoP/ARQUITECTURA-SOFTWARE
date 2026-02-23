@@ -11,16 +11,18 @@ class CalculadoraPromedio:
         self._filtro = filtro
 
     def calcular(self, materias: List[Materia]) -> float:
-        # Simulación de un cálculo básico (promedio simple de notas finales por materia)
         materias_a_procesar = self._filtro.filtrar(materias) if self._filtro else materias
         if not materias_a_procesar:
             return 0.0
-        return sum(m.get_nota() for m in materias_a_procesar) / len(materias_a_procesar)
+            
+        suma_productos = sum(m.get_nota() * m.get_creditos() for m in materias_a_procesar)
+        suma_creditos = sum(m.get_creditos() for m in materias_a_procesar)
+        
+        if suma_creditos == 0:
+            return 0.0
+            
+        return suma_productos / suma_creditos
 
     def calcular_por_semestre(self, materias: List[Materia], semestre: int) -> float:
         materias_sem = [m for m in materias if m.get_semestre() == semestre]
         return self.calcular(materias_sem)
-
-    def sumatoria_ponderada(self, materias: List[Materia]) -> float:
-        # Diseño extensible para el cálculo ponderado posteriormente
-        return sum(m.get_nota() * m.get_creditos() for m in materias)
