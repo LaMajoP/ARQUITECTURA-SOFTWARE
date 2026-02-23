@@ -48,10 +48,11 @@
 
 
  ### Analisis Tecnico
+ El sistema presenta alta cohesión y bajo acoplamiento ya que cada clase tiene una responsabilidad definida, por ejemplo Materia  gestiona los datos de la asignatura, mientras que CalculadoraPromedio se encarga únicamente de los calculos necesarios. Ademas, los modulos se comunican mediante interfaces y el uso de FactoryMethod, evitando una dependencia directa.
 
 
 
  ### Creditos y Roles
- + Maria Jose Palomino Carreño - 
- + Carlos Andres Diaz Mendez - 
- + Manuel David Carreño Buitrago -
+ + Maria Jose Palomino Carreño 
+ + Carlos Andres Diaz Mendez 
+ + Manuel David Carreño Buitrago 
