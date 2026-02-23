@@ -1,6 +1,7 @@
 import os
 import copy
-from typing import Optional
+from typing import Optional, List
+from domain.materia import Materia
 from domain.carrera_ingenieria import CarreraIngenieria
 from infrastructure.malla_loader_factory import MallaLoaderFactory
 from domain.calculadora_promedio import CalculadoraPromedio
@@ -34,17 +35,30 @@ def obtener_int_input(mensaje: str, min_val: Optional[int] = None, max_val: Opti
         except ValueError:
             print("Error: Ingrese un número entero válido.")
 
+def mostrar_carga_academica(materias: List[Materia]) -> None:
+    print("\n" + "="*50)
+    print("--- Mi Carga Académica ---")
+    if not materias:
+        print("(No hay materias registradas en su carga académica)")
+    else:
+        for m in materias:
+            print(m)
+
 def main():
     print("=== Calculadora de Promedios Académicos - Facultad de Ingeniería ===")
     
     print("\nCarreras disponibles:")
     print("1. Ingeniería Informática")
     print("2. Ingeniería Civil")
-    opcion_carrera = input("Seleccione una carrera (1-2): ")
+    print("3. Ingeniería de Bioproducción")
+    opcion_carrera = input("Seleccione una carrera (1-3): ")
     
     if opcion_carrera == "2":
         carrera = CarreraIngenieria.INGENIERIA_CIVIL
         archivo_malla = 'malla_civil.json'
+    elif opcion_carrera == "3":
+        carrera = CarreraIngenieria.INGENIERIA_BIOPRODUCCION
+        archivo_malla = 'malla_bioproduccion.json'
     else:
         if opcion_carrera != "1":
             print("Opción no válida. Seleccionando Ingeniería Informática por defecto...")
@@ -72,13 +86,7 @@ def main():
     calculadora = CalculadoraPromedio()
     
     while True:
-        print("\n" + "="*50)
-        print("--- Mi Carga Académica ---")
-        if not carga_academica:
-            print("(No hay materias registradas en su carga académica)")
-        else:
-            for m in carga_academica:
-                print(m)
+        mostrar_carga_academica(carga_academica)
                 
         print("\n--- Resumen de Promedios ---")
         promedio_acumulado = calculadora.calcular(carga_academica)

@@ -4,7 +4,7 @@ class Materia:
         self._nombre = nombre
         self._creditos = creditos
         self._nota = 0.0
-        self._cortes = [0.0, 0.0, 0.0]
+        self._cortes = {"corte1": 0.0, "corte2": 0.0, "corte3": 0.0}
         self._semestre = semestre
         self._es_oficial = es_oficial
 
@@ -37,11 +37,11 @@ class Materia:
     def set_notas_cortes(self, corte1: float, corte2: float, corte3: float) -> None:
         if not all(0.0 <= c <= 5.0 for c in (corte1, corte2, corte3)):
             raise ValueError("Las notas de los cortes deben estar entre 0.0 y 5.0")
-        self._cortes = [corte1, corte2, corte3]
+        self._cortes = {"corte1": corte1, "corte2": corte2, "corte3": corte3}
         nota_final = round((corte1 * 0.3) + (corte2 * 0.3) + (corte3 * 0.4), 1)
         self.set_nota(nota_final)
 
-    def get_cortes(self) -> list:
+    def get_cortes(self) -> dict:
         return self._cortes
 
     def get_semestre(self) -> int:
@@ -57,5 +57,6 @@ class Materia:
         self._es_oficial = es_oficial
 
     def __str__(self):
-        cortes_str = f" [C1:{self._cortes[0]:.1f} C2:{self._cortes[1]:.1f} C3:{self._cortes[2]:.1f}]" if any(c > 0 for c in self._cortes) else ""
+        c1, c2, c3 = self._cortes["corte1"], self._cortes["corte2"], self._cortes["corte3"]
+        cortes_str = f" [C1:{c1:.1f} C2:{c2:.1f} C3:{c3:.1f}]" if any(c > 0 for c in (c1, c2, c3)) else ""
         return f"[{self._id}] {self._nombre} (Semestre {self._semestre}) - Créditos: {self._creditos} - Nota Final: {self._nota:.1f}{cortes_str}"

@@ -10,12 +10,15 @@ class CalculadoraPromedio:
     def set_filtro(self, filtro: FiltroStrategy) -> None:
         self._filtro = filtro
 
+    def _sumatoria_ponderada(self, materias: List[Materia]) -> float:
+        return sum(m.get_nota() * m.get_creditos() for m in materias)
+
     def calcular(self, materias: List[Materia]) -> float:
         materias_a_procesar = self._filtro.filtrar(materias) if self._filtro else materias
         if not materias_a_procesar:
             return 0.0
             
-        suma_productos = sum(m.get_nota() * m.get_creditos() for m in materias_a_procesar)
+        suma_productos = self._sumatoria_ponderada(materias_a_procesar)
         suma_creditos = sum(m.get_creditos() for m in materias_a_procesar)
         
         if suma_creditos == 0:

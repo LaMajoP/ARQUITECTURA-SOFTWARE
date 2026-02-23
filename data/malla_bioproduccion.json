@@ -1,0 +1,376 @@
+{
+    "carrera": "Ingeniería de Bioproducción",
+    "materias": [
+        {
+            "id": 101,
+            "nombre": "Cálculo Univariado",
+            "creditos": 4,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 102,
+            "nombre": "Algoritmos y Fundamentos de Programación",
+            "creditos": 4,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 103,
+            "nombre": "Fundamentos de Química",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 104,
+            "nombre": "Introducción a los Agronegocios Sostenibles",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 105,
+            "nombre": "Cultura, Arte y Lenguaje",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 106,
+            "nombre": "Core Curriculum P&C I: Persona y Autoconocimiento",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 107,
+            "nombre": "Inglés I",
+            "creditos": 2,
+            "semestre": 1,
+            "esOficial": true
+        },
+        {
+            "id": 201,
+            "nombre": "Cálculo Multivariado",
+            "creditos": 4,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 202,
+            "nombre": "Propiedades de la Materia",
+            "creditos": 4,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 203,
+            "nombre": "Análisis de Fenómenos Físicos",
+            "creditos": 4,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 204,
+            "nombre": "Probabilidad y Estadística Descriptiva",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 205,
+            "nombre": "Core Curriculum P&C II: Persona y Afectividad",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 206,
+            "nombre": "Inglés II",
+            "creditos": 2,
+            "semestre": 2,
+            "esOficial": true
+        },
+        {
+            "id": 301,
+            "nombre": "Probabilidad y Estadística Inferencial",
+            "creditos": 4,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 302,
+            "nombre": "Química de las Reacciones",
+            "creditos": 4,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 303,
+            "nombre": "Innovación en el Desarrollo de Alimentos",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 304,
+            "nombre": "Ingeniería Económica",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 305,
+            "nombre": "Liderazgo Transformador y Pensamiento Innovador",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 306,
+            "nombre": "Core Curriculum P&C III: Persona y Trascendencia",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 307,
+            "nombre": "Inglés III",
+            "creditos": 2,
+            "semestre": 3,
+            "esOficial": true
+        },
+        {
+            "id": 401,
+            "nombre": "Procesos Químicos y Bioquímicos",
+            "creditos": 4,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 402,
+            "nombre": "Termodinámica",
+            "creditos": 4,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 403,
+            "nombre": "Analítica de Datos",
+            "creditos": 4,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 404,
+            "nombre": "Gestión de Proyectos",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 405,
+            "nombre": "Core Curriculum P&C IV: Persona y su Actuar",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 406,
+            "nombre": "Inglés IV",
+            "creditos": 2,
+            "semestre": 4,
+            "esOficial": true
+        },
+        {
+            "id": 501,
+            "nombre": "Análisis de Conservación de la Materia y Energía",
+            "creditos": 4,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 502,
+            "nombre": "Introducción a la Mecánica de Fluidos",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 503,
+            "nombre": "Ecuaciones Diferenciales",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 504,
+            "nombre": "Éxito Profesional con Sentido Social",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 505,
+            "nombre": "Food Science",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 506,
+            "nombre": "Electiva I",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 507,
+            "nombre": "Core Curriculum P&C V: Persona y Retos Actuales",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 508,
+            "nombre": "Inglés V",
+            "creditos": 2,
+            "semestre": 5,
+            "esOficial": true
+        },
+        {
+            "id": 601,
+            "nombre": "Caracterización de Bioproductos para la Industria",
+            "creditos": 4,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 602,
+            "nombre": "Manejo de Sólidos y Separaciones Físicas",
+            "creditos": 4,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 603,
+            "nombre": "Fundamentos de Biología Integrativa",
+            "creditos": 4,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 604,
+            "nombre": "Diseño de Producto, Proceso y Servicio",
+            "creditos": 2,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 605,
+            "nombre": "Electiva II",
+            "creditos": 2,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 606,
+            "nombre": "Inglés VI",
+            "creditos": 2,
+            "semestre": 6,
+            "esOficial": true
+        },
+        {
+            "id": 701,
+            "nombre": "Microbiología Aplicada",
+            "creditos": 4,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 702,
+            "nombre": "Seguridad Industrial y Análisis de Riesgos en Procesos Industriales",
+            "creditos": 4,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 703,
+            "nombre": "Operaciones de Conservación",
+            "creditos": 4,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 704,
+            "nombre": "Cointeligencia para la Trayectoria Profesional",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 705,
+            "nombre": "Saberes para la Vida",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 706,
+            "nombre": "Inglés VII",
+            "creditos": 2,
+            "semestre": 7,
+            "esOficial": true
+        },
+        {
+            "id": 801,
+            "nombre": "Biología Molecular y Genómica Funcional",
+            "creditos": 4,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 802,
+            "nombre": "Bioprocesos y Operaciones de Bioseparación",
+            "creditos": 4,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 803,
+            "nombre": "Capstone Project: Process and Plant Design",
+            "creditos": 4,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 804,
+            "nombre": "Gestión de la Calidad",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 805,
+            "nombre": "Electiva III",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 806,
+            "nombre": "Electiva IV",
+            "creditos": 2,
+            "semestre": 8,
+            "esOficial": true
+        },
+        {
+            "id": 901,
+            "nombre": "Práctica Profesional",
+            "creditos": 18,
+            "semestre": 9,
+            "esOficial": true
+        }
+    ]
+}
