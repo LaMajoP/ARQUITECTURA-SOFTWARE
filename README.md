@@ -43,7 +43,7 @@
 
 
  ### Implementación 
-
+El proyecto esta desarrollado en Python, estructurado en: domain, infraestructure y strategy. Las mallas curriculares se cargan desde el JSON. El calculo del promedio ponderado se realiza multiplicando la nota de cada materia por sus créditos y dividiendo entre el total de créditos y los filtros se aplican dinamicamente antes de realizar el calculo y la interacción con el usuario se hace directamente desde el main.py
 
 
 
