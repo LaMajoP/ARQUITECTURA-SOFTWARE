@@ -39,17 +39,24 @@ def main():
     
     print("\nCarreras disponibles:")
     print("1. Ingeniería Informática")
-    opcion_carrera = input("Seleccione una carrera (1): ")
-    if opcion_carrera != "1":
-        print("Por ahora solo se soporta Ingeniería Informática. Seleccionando por defecto...")
+    print("2. Ingeniería Civil")
+    opcion_carrera = input("Seleccione una carrera (1-2): ")
+    
+    if opcion_carrera == "2":
+        carrera = CarreraIngenieria.INGENIERIA_CIVIL
+        archivo_malla = 'malla_civil.json'
+    else:
+        if opcion_carrera != "1":
+            print("Opción no válida. Seleccionando Ingeniería Informática por defecto...")
+        carrera = CarreraIngenieria.INGENIERIA_INFORMATICA
+        archivo_malla = 'malla_informatica.json'
         
-    carrera = CarreraIngenieria.INGENIERIA_INFORMATICA
     print(f"\nHa seleccionado: {carrera.value}")
     
     try:
         loader = MallaLoaderFactory.get_loader('json')
-        # Buscamos el archivo json de prueba en la carpeta data
-        ruta_malla = os.path.join(os.path.dirname(__file__), 'data', 'malla_informatica.json')
+        # Buscamos el archivo json de la malla en la carpeta data
+        ruta_malla = os.path.join(os.path.dirname(__file__), 'data', archivo_malla)
         malla = loader.load(ruta_malla)
         print("Malla curricular cargada exitosamente.")
     except Exception as e:
