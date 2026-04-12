@@ -1,5 +1,6 @@
 import os
 import copy
+import requests
 from typing import Optional, List
 from domain.materia import Materia
 from domain.carrera_ingenieria import CarreraIngenieria
@@ -44,9 +45,143 @@ def mostrar_carga_academica(materias: List[Materia]) -> None:
         for m in materias:
             print(m)
 
+def login_api() -> str:
+    """Autentica al usuario contra la API y retorna el JWT token."""
+    print("\n--- Autenticacion requerida ---")
+    username = input("Usuario: ").strip()
+    password = input("Contraseña: ").strip()
+    try:
+        response = requests.post(
+            "http://127.0.0.1:8000/login",
+            json={"username": username, "password": password},
+            timeout=5
+        )
+        if response.status_code == 200:
+            token = response.json()["access_token"]
+            print(f"Autenticacion exitosa. Bienvenido, {username}.")
+            return token
+        else:
+            print(f"Error: {response.json().get('detail', 'Credenciales invalidas.')}")
+            return None
+    except requests.exceptions.ConnectionError:
+        print("Error: No se pudo conectar con la API. Asegurese de que el servidor este corriendo.")
+        return None
+    except requests.exceptions.Timeout:
+        print("Error: La API no respondio a tiempo.")
+        return None
+
+
+def calcular_nota_para_objetivo(malla, carga_academica: List[Materia], token: str) -> None:
+    print("\n" + "="*50)
+    print("--- Calcular Nota Requerida para Promedio Objetivo ---")
+
+    # Materias cursadas: las que ya están en la carga académica
+    materias_cursadas = [
+        {"id": m.get_id(), "nombre": m.get_nombre(), "creditos": m.get_creditos(),
+         "semestre": m.get_semestre(), "nota": m.get_nota(), "es_oficial": m.es_oficial}
+        for m in carga_academica
+    ]
+
+    # Selección de materias pendientes desde la malla
+    materias_pendientes = []
+    ids_pendientes = set()
+    ids_cursadas = {m.get_id() for m in carga_academica}
+
+    print("\nSeleccione las materias que aún le faltan por cursar.")
+    while True:
+        semestre_objetivo = obtener_int_input("Ingrese el semestre de la materia pendiente (1-9), o 0 para terminar: ", min_val=0, max_val=9)
+        if semestre_objetivo == 0:
+            break
+
+        materias_del_semestre = malla.get_materias_por_semestre(semestre_objetivo)
+        if not materias_del_semestre:
+            print(f"No se encontraron materias para el semestre {semestre_objetivo}.")
+            continue
+
+        print(f"\n--- Materias del Semestre {semestre_objetivo} ---")
+        for m in materias_del_semestre:
+            print(f"  ID: {m.get_id()} - {m.get_nombre()} ({m.get_creditos()} créditos)")
+
+        id_pendiente = obtener_int_input("Ingrese el ID de la materia pendiente: ")
+
+        if id_pendiente in ids_cursadas:
+            print("Esa materia ya está en su carga académica actual.")
+            continue
+        if id_pendiente in ids_pendientes:
+            print("Esa materia ya fue agregada como pendiente.")
+            continue
+
+        materia = next((m for m in materias_del_semestre if m.get_id() == id_pendiente), None)
+        if not materia:
+            print(f"No se encontró la materia con ID {id_pendiente} en el semestre {semestre_objetivo}.")
+            continue
+
+        materias_pendientes.append({
+            "id": materia.get_id(), "nombre": materia.get_nombre(), "creditos": materia.get_creditos(),
+            "semestre": materia.get_semestre(), "nota": 0.0, "es_oficial": materia.es_oficial
+        })
+        ids_pendientes.add(id_pendiente)
+        print(f"Materia '{materia.get_nombre()}' agregada como pendiente.")
+
+    if not materias_pendientes:
+        print("Debe agregar al menos una materia pendiente.")
+        return
+
+    promedio_objetivo = obtener_float_input("\nIngrese el promedio objetivo que desea alcanzar (0.0 - 5.0): ", 0.0, 5.0)
+
+    payload = {
+        "materias_cursadas": materias_cursadas,
+        "materias_pendientes": materias_pendientes,
+        "promedio_objetivo": promedio_objetivo
+    }
+
+    try:
+        response = requests.post(
+            "http://127.0.0.1:8000/promedio-objetivo",
+            json=payload,
+            headers={"Authorization": f"Bearer {token}"},
+            timeout=5
+        )
+        response.raise_for_status()
+        resultado = response.json()
+
+        print("\n" + "="*50)
+        print("--- Resultado ---")
+        print(f"Promedio actual:               {resultado['promedio_actual']:.2f}")
+        print(f"Promedio objetivo:             {resultado['promedio_objetivo']:.2f}")
+        print(f"Créditos cursados:             {resultado['creditos_cursados']}")
+        print(f"Créditos pendientes:           {resultado['creditos_pendientes']}")
+        print(f"Nota requerida en pendientes:  {resultado['nota_requerida_en_pendientes']:.2f}")
+        print(f"¿Es alcanzable?:               {'Sí' if resultado['es_alcanzable'] else 'No (supera 5.0)'}")
+
+        if resultado.get("materias_extra_sugeridas"):
+            print("\nMaterias extra sugeridas:")
+            for me in resultado["materias_extra_sugeridas"]:
+                print(f"  - {me['nombre']} ({me['creditos']} créditos)")
+        print("="*50)
+
+    except requests.exceptions.ConnectionError:
+        print("\nError: No se pudo conectar con la API. Asegurese de que el servidor este corriendo en el puerto 8000.")
+    except requests.exceptions.Timeout:
+        print("\nError: La API no respondio a tiempo.")
+    except requests.exceptions.HTTPError as e:
+        if e.response.status_code == 401:
+            print("\nError: Token invalido o expirado. Reinicie el programa para autenticarse nuevamente.")
+        elif e.response.status_code == 403:
+            print("\nError: Acceso denegado. Su rol no tiene permiso para usar esta funcion.")
+        else:
+            print(f"\nError al consultar la API: {e}")
+    except requests.exceptions.RequestException as e:
+        print(f"\nError al consultar la API: {e}")
+
+
 def main():
-    print("=== Calculadora de Promedios Académicos - Facultad de Ingeniería ===")
-    
+    print("=== Calculadora de Promedios Academicos - Facultad de Ingenieria ===")
+    token = login_api()
+    if not token:
+        print("No se pudo autenticar. Saliendo.")
+        return
+
     print("\nCarreras disponibles:")
     print("1. Ingeniería Informática")
     print("2. Ingeniería Civil")
@@ -121,7 +256,8 @@ def main():
         print("2. Agregar una materia de otro semestre")
         print("3. Ingresar notas de los 3 cortes para una materia")
         print("4. Agregar TODAS las materias de otro semestre")
-        print("5. Salir")
+        print("5. Calcular nota requerida para promedio objetivo")
+        print("6. Salir")
         
         opcion = input("Seleccione una opción: ").strip().lower()
         
@@ -198,6 +334,9 @@ def main():
                 print(f"Todas las materias del semestre {semestre_objetivo} ya estaban en su carga académica.")
                 
         elif opcion in ['5', 'e']:
+            calcular_nota_para_objetivo(malla, carga_academica, token)
+
+        elif opcion in ['6', 'f']:
             print("Saliendo de la calculadora. ¡Hasta pronto!")
             break
         else:
