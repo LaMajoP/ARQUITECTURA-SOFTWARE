@@ -1,0 +1,92 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "calculadora-promedios",
+    "title": "Calculadora de Promedios - Servicios",
+    "tags": ["fastapi", "prometheus"],
+    "timezone": "browser",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Requests Totales - Servicio Principal",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+        "targets": [
+          {
+            "expr": "rate(http_requests_total{job=\"servicio-principal\"}[1m])",
+            "legendFormat": "{{method}} {{handler}} - {{status}}"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "id": 2,
+        "title": "Requests Totales - Servicio B",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+        "targets": [
+          {
+            "expr": "rate(http_requests_total{job=\"servicio-b\"}[1m])",
+            "legendFormat": "{{method}} {{handler}} - {{status}}"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "id": 3,
+        "title": "Latencia Promedio (s) - Servicio Principal",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+        "targets": [
+          {
+            "expr": "rate(http_request_duration_seconds_sum{job=\"servicio-principal\"}[1m]) / rate(http_request_duration_seconds_count{job=\"servicio-principal\"}[1m])",
+            "legendFormat": "{{handler}}"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "id": 4,
+        "title": "Latencia Promedio (s) - Servicio B",
+        "type": "timeseries",
+        "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+        "targets": [
+          {
+            "expr": "rate(http_request_duration_seconds_sum{job=\"servicio-b\"}[1m]) / rate(http_request_duration_seconds_count{job=\"servicio-b\"}[1m])",
+            "legendFormat": "{{handler}}"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "id": 5,
+        "title": "Requests por Codigo de Respuesta - Servicio Principal",
+        "type": "piechart",
+        "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+        "targets": [
+          {
+            "expr": "sum by (status) (http_requests_total{job=\"servicio-principal\"})",
+            "legendFormat": "HTTP {{status}}"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "id": 6,
+        "title": "Requests por Codigo de Respuesta - Servicio B",
+        "type": "piechart",
+        "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+        "targets": [
+          {
+            "expr": "sum by (status) (http_requests_total{job=\"servicio-b\"})",
+            "legendFormat": "HTTP {{status}}"
+          }
+        ],
+        "datasource": "Prometheus"
+      }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 38
+  },
+  "overwrite": true
+}
