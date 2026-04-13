@@ -78,7 +78,7 @@ def calcular_nota_para_objetivo(malla, carga_academica: List[Materia], token: st
     # Materias cursadas: las que ya están en la carga académica
     materias_cursadas = [
         {"id": m.get_id(), "nombre": m.get_nombre(), "creditos": m.get_creditos(),
-         "semestre": m.get_semestre(), "nota": m.get_nota(), "es_oficial": m.es_oficial}
+         "semestre": m.get_semestre(), "nota": m.get_nota(), "es_oficial": m.is_es_oficial}
         for m in carga_academica
     ]
 
@@ -175,6 +175,46 @@ def calcular_nota_para_objetivo(malla, carga_academica: List[Materia], token: st
         print(f"\nError al consultar la API: {e}")
 
 
+def oportunidades_segun_promedio(promedio:float):
+    print("\n")
+    print("=== Estas son las oportunidades a las que puedes aplicar segun tu promedio ponderado: ===")
+    band = False
+
+
+    if promedio >=4.0:
+        print("- Beca Excelencia")
+        print("- Inductor (Para más información consulta directamente con tu facultad)")
+        band = True
+    
+    if promedio >=3.8:
+        print("- Puedes aplicar a becas (Debes revisar en la oficina de becas \n O en www.unisabana.edu.co/becas/becas-de-pregrado) ")
+        print("- Programas de financión (directa)")
+        band = True
+    
+    if promedio >= 3.7:
+        print("- Monitor Academico ")
+        print(" |Recuerda que para ser monitor academico la materia")
+        print(" cursada debio ser aprobada con una nota mayor o igual a 4.0| ")
+        print("\n")
+        print("- Internacionalización ")
+        band=True
+
+
+    if promedio > 3.4:
+        print("- PAT (Programa Aprendamos a Trabajar)")
+        band=True
+    
+    
+    if not band:
+        print("Con tu promedio aún no clasificas a ninguno de los programas dispuestos por la universidad")
+        print("Sigue esforzandote, puedes lograrlo!")
+
+    print("="*50)
+
+
+    
+
+
 def main():
     print("=== Calculadora de Promedios Academicos - Facultad de Ingenieria ===")
     token = login_api()
@@ -257,7 +297,8 @@ def main():
         print("3. Ingresar notas de los 3 cortes para una materia")
         print("4. Agregar TODAS las materias de otro semestre")
         print("5. Calcular nota requerida para promedio objetivo")
-        print("6. Salir")
+        print("6. Ver oportunidades segun promedio")
+        print("7. Salir")
         
         opcion = input("Seleccione una opción: ").strip().lower()
         
@@ -337,7 +378,10 @@ def main():
             calcular_nota_para_objetivo(malla, carga_academica, token)
 
         elif opcion in ['6', 'f']:
-            print("Saliendo de la calculadora. ¡Hasta pronto!")
+            oportunidades_segun_promedio(promedio_acumulado)
+
+        elif opcion in ['7','g']:
+            print("Saliendo de la calculadora. ¡Hasta Pronto!")
             break
         else:
             print("Opción inválida. Intente nuevamente.")
