@@ -28,6 +28,8 @@ jobs:
         run: pip install pytest pytest-cov httpx
 
       - name: Correr pruebas con cobertura
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: pytest tests/ -v --cov=. --cov-report=term-missing --cov-report=xml:coverage.xml --cov-config=.coveragerc
 
       - name: Guardar reporte de cobertura
