@@ -1,0 +1,49 @@
+name: CI - Pruebas Automatizadas
+
+# se ejecuta en cada push o pull request a main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  tests:
+    name: Correr pruebas unitarias
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # 1. descarga el codigo del repositorio
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      # 2. instala python 3.12
+      - name: Instalar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 3. instala las dependencias del proyecto
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      # 4. instala las dependencias de pruebas
+      - name: Instalar dependencias de pruebas
+        run: pip install pytest pytest-cov httpx
+
+      # 5. corre todos los tests y genera reporte de cobertura
+      - name: Correr pruebas con cobertura
+        run: |
+          pytest tests/ -v \
+            --cov=. \
+            --cov-report=term-missing \
+            --cov-report=xml:coverage.xml \
+            --cov-omit="main.py,domain/carrera_ingenieria.py,domain/malla_curricular.py,infrastructure/*,tests/*"
+
+      # 6. guarda el reporte de cobertura como artefacto descargable
+      - name: Guardar reporte de cobertura
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-cobertura
+          path: coverage.xml
