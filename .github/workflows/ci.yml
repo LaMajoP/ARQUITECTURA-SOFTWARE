@@ -50,9 +50,28 @@ jobs:
       - name: Clonar repositorio
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # necesario para escanear todo el historial de commits
+          fetch-depth: 0
 
       - name: Correr Gitleaks
         uses: gitleaks/gitleaks-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # ── Job 3: SonarCloud - Análisis de calidad ─────────
+  sonarcloud:
+    name: SonarCloud - Análisis de calidad
+    runs-on: ubuntu-latest
+    needs: tests
+
+    steps:
+
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Analizar con SonarCloud
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
