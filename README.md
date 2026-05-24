@@ -3,7 +3,7 @@
  ## Presentacion del Problema
  En el entorno universitario existe una alta desinformacion y confusion entre los estudiantes respecto al calculo de sus notas, promedios semestrales y promedios ponderados a lo largo de su vida universitaria. Asi pues, muchos de ellos no tienen claridad sobre:
 
- + Como calcular su promedio real
+ + Como calcular su promedio real 
  + Que materias debemos incluir y que materias debemos excluir
  + El impacto de las asignaturas de acuerdo a su cantidad de creditos
  + Que se necesita para alcanzar ese promedio objetivo 
