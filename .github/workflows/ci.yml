@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Clonar repositorio
         uses: actions/checkout@v4
 
@@ -46,7 +45,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       - name: Clonar repositorio
         uses: actions/checkout@v4
         with:
@@ -64,7 +62,6 @@ jobs:
     needs: tests
 
     steps:
-
       - name: Clonar repositorio
         uses: actions/checkout@v4
         with:
@@ -75,3 +72,98 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  # ── Job 4: Postman - Pruebas de API ─────────────────
+  postman:
+    name: Postman - Pruebas de API
+    runs-on: ubuntu-latest
+    needs: tests
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      - name: Levantar servicio
+        run: |
+          uvicorn api.main:app --host 0.0.0.0 --port 8000 &
+          sleep 3
+
+      - name: Instalar Postman CLI
+        run: curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+
+      - name: Correr colección
+        env:
+          POSTMAN_API_KEY: ${{ secrets.POSTMAN_API_KEY }}
+        run: |
+          postman login --with-api-key $POSTMAN_API_KEY
+          postman collection run f1ddb5c9-7bf4-46f7-bfad-70c15e55de45
+
+  # ── Job 5: Trivy - Escaneo de imagen Docker ─────────
+  trivy:
+    name: Trivy - Escaneo de imagen
+    runs-on: ubuntu-latest
+    needs: tests
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Construir imagen Docker
+        run: docker build -t calculadora-app:test .
+
+      - name: Escanear imagen con Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: calculadora-app:test
+          format: table
+          exit-code: 0
+          severity: CRITICAL,HIGH
+
+      - name: Guardar reporte Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: calculadora-app:test
+          format: sarif
+          output: trivy-report.sarif
+          exit-code: 0
+
+      - name: Subir reporte Trivy
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-trivy
+          path: trivy-report.sarif
+
+  # ── Job 6: OWASP Dependency-Check ───────────────────
+  dependency-check:
+    name: OWASP Dependency-Check
+    runs-on: ubuntu-latest
+    needs: tests
+
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: Correr OWASP Dependency-Check
+        uses: dependency-check/Dependency-Check_Action@main
+        with:
+          project: "calculadora-promedio"
+          path: "."
+          format: "HTML"
+          out: "reports"
+          args: >
+            --enableRetired
+            --disableNodeJS
+
+      - name: Subir reporte de dependencias
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-dependency-check
+          path: reports/
