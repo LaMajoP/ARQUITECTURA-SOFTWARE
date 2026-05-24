@@ -1,4 +1,4 @@
-name: CI - Pruebas Automatizadas
+name: CI - Pruebas Automatizadas y DevSecOps
 
 on:
   push:
@@ -7,6 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
+
+  # ── Job 1: Pruebas unitarias ────────────────────────
   tests:
     name: Correr pruebas unitarias
     runs-on: ubuntu-latest
@@ -37,3 +39,20 @@ jobs:
         with:
           name: reporte-cobertura
           path: coverage.xml
+
+  # ── Job 2: Gitleaks - Secrets Scanning ─────────────
+  gitleaks:
+    name: Gitleaks - Buscar credenciales expuestas
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # necesario para escanear todo el historial de commits
+
+      - name: Correr Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
