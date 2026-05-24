@@ -9,3 +9,4 @@ opentelemetry-sdk
 opentelemetry-instrumentation-fastapi
 opentelemetry-exporter-otlp-proto-http
 opentelemetry-instrumentation-requests
+allure-pytest
