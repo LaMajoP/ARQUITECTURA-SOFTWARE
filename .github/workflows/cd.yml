@@ -9,7 +9,6 @@ on:
 
 jobs:
 
-  # ── Job: Publicar imagen en Docker Hub ──────────────
   deploy:
     name: Construir y publicar imagen Docker
     runs-on: ubuntu-latest
@@ -30,7 +29,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          dockerfile: Dockerfile
+          file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/arquitectura-software:latest
 
@@ -38,6 +37,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          dockerfile: Dockerfile.service_b
+          file: ./Dockerfile.service_b
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/arquitectura-software-service-b:latest
