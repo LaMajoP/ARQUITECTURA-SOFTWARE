@@ -56,6 +56,8 @@ Separacion por capas: `domain/` (negocio), `infrastructure/` (carga de datos),
 - **Promedio objetivo (solo rol admin):** en `/promedio-objetivo` el sistema calcula la nota necesaria en las materias pendientes; si el rol no es admin, responde 403.
 - **Servicio B caido:** tras el timeout y los reintentos, el sistema usa un fallback (lista vacia) y el usuario igual recibe su promedio.
 
+![alt text](../assets/Gemini_Generated_Image_wivt79wivt79wivt.png)
+
 ---
 
 ## Modelo C4
@@ -105,6 +107,8 @@ Detalla las piezas internas del contenedor principal (el Servicio Principal).
 El ultimo nivel detalla las clases concretas y sus relaciones. Coincide con la Vista Logica
 del modelo 4+1 (ver tabla de clases arriba). El diagrama de clases UML del proyecto esta en
 `assets/diagrama_clases_uml.png`.
+
+![alt text](../assets/Gemini_Generated_Image_wivt79wivt79wivt-2.png)
 
 ---
 
