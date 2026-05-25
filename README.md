@@ -106,6 +106,8 @@ docker-compose up -d
 
 La documentacion detallada se encuentra en:
 - `docs/arquitectura.md` — Descripcion del sistema y arquitectura
+- `docs/modelos-arquitectonicos.md` — Modelos arquitectonicos 4+1 y C4
+- `docs/decisiones-arquitectonicas.md` — Decisiones de seguridad y escalabilidad (ADR)
 - `docs/resiliencia.md` — Patrones de resiliencia implementados
 - `docs/observabilidad.md` — Herramientas de monitoreo integradas
 - `docs/seguridad.md` — Autenticacion JWT y control de acceso
