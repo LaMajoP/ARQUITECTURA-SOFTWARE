@@ -73,10 +73,20 @@ jobs:
 
       - name: Levantar Prometheus
         run: |
+          cat > /tmp/prometheus-ci.yml << 'EOF'
+          global:
+            scrape_interval: 15s
+          scrape_configs:
+            - job_name: "servicio-principal"
+              metrics_path: /metrics
+              static_configs:
+                - targets: ["localhost:8000"]
+          EOF
+
           docker run -d \
             --name prometheus \
             --network host \
-            -v ${{ github.workspace }}/prometheus.yml:/etc/prometheus/prometheus.yml \
+            -v /tmp/prometheus-ci.yml:/etc/prometheus/prometheus.yml \
             prom/prometheus:latest
           sleep 10
 
