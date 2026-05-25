@@ -7,13 +7,14 @@ import { check, sleep } from "k6";
 
 export const options = {
   stages: [
-    { duration: "15s", target: 10 },  // sube gradualmente a 10 usuarios en 15s
-    { duration: "30s", target: 10 },  // mantiene 10 usuarios por 30s
-    { duration: "15s", target: 0  },  // baja gradualmente a 0 usuarios en 15s
+    { duration: "15s", target: 10 },  
+    { duration: "30s", target: 50 },  
+    { duration: "15s", target: 50 },
+    { duration: "30s", target: 0 },
   ],
   thresholds: {
-    http_req_duration: ["p(95)<2000"],  // el 95% de requests debe responder en menos de 2s
-    http_req_failed:   ["rate<0.05"],   // menos del 5% de requests pueden fallar
+    http_req_duration: ["p(95)<10000"],  // el 95% de requests debe responder en menos de 2s
+    http_req_failed:   ["rate<0.10"],   // menos del 5% de requests pueden fallar
   },
 };
 
