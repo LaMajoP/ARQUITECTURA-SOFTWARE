@@ -108,4 +108,8 @@ jobs:
           echo "## Despliegue exitoso" >> $GITHUB_STEP_SUMMARY
           echo "| Componente | Estado |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|" >> $GITHUB_STEP_SUMMARY
-          echo "| Imagen principal | publicada en Docker
+          echo "| Imagen principal | publicada en Docker Hub |" >> $GITHUB_STEP_SUMMARY
+          echo "| Imagen service_b | publicada en Docker Hub |" >> $GITHUB_STEP_SUMMARY
+          echo "| Prometheus | verificado |" >> $GITHUB_STEP_SUMMARY
+          echo "| Métricas /metrics | verificado |" >> $GITHUB_STEP_SUMMARY
+          echo "| Timestamp | $(date -u) |" >> $GITHUB_STEP_SUMMARY
