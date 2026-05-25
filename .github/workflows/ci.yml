@@ -26,12 +26,28 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Instalar dependencias de pruebas
-        run: pip install pytest pytest-cov httpx
+        run: pip install pytest pytest-cov httpx allure-pytest
 
-      - name: Correr pruebas con cobertura
+      - name: Correr pruebas con cobertura y Allure
         env:
           PYTHONPATH: ${{ github.workspace }}
-        run: pytest tests/ -v --cov=. --cov-report=term-missing --cov-report=xml:coverage.xml --cov-config=.coveragerc
+        run: pytest tests/ -v --cov=. --cov-report=term-missing --cov-report=xml:coverage.xml --cov-config=.coveragerc --alluredir=allure-results
+
+      - name: Instalar Allure CLI
+        run: |
+          wget -qO allure.tgz https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+          tar -zxf allure.tgz
+          sudo mv allure-2.27.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+
+      - name: Generar reporte Allure
+        run: allure generate allure-results --clean -o allure-report
+
+      - name: Guardar reporte Allure
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report
 
       - name: Guardar reporte de cobertura
         uses: actions/upload-artifact@v4
