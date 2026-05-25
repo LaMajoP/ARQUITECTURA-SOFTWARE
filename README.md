@@ -111,6 +111,7 @@ La documentacion detallada se encuentra en:
 - `docs/resiliencia.md` — Patrones de resiliencia implementados
 - `docs/observabilidad.md` — Herramientas de monitoreo integradas
 - `docs/seguridad.md` — Autenticacion JWT y control de acceso
+- `docs/corte3.md` — Pruebas unitarias, pipeline CI/CD, DevSecOps, pruebas de carga, pruebas de API, pruebas autonomas, monitoreo y retos técnicos del tercer corte.
 
 ---
 
