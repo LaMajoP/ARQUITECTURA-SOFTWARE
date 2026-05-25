@@ -13,8 +13,8 @@ export const options = {
     { duration: "30s", target: 0 },
   ],
   thresholds: {
-    http_req_duration: ["p(95)<10000"],  // el 95% de requests debe responder en menos de 2s
-    http_req_failed:   ["rate<0.10"],   // menos del 5% de requests pueden fallar
+    http_req_duration: ["p(95)<10000"],  
+    http_req_failed:   ["rate<0.10"],   
   },
 };
 

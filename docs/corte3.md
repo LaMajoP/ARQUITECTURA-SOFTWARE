@@ -124,7 +124,7 @@ Cada usuario virtual ejecuta en loop:
 
 | VUs | p(95) | Fallos | Umbral | Resultado |
 |---|---|---|---|---|
-| 10 | 9.05s | 0% | < 2s | ✅ sin fallos |
+| 10 | 9.05s | 0% | < 10s | ✅ sin fallos |
 | 50 | 10.21s | 0% | < 10s | ⚠️ límite del umbral |
 | 100 | 18.49s | 0% | < 10s | ❌ supera umbral |
 
